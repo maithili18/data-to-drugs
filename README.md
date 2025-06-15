@@ -1,25 +1,23 @@
-# Genomics Data Curation and Annotation
+# NGS Real Variant Filter
 
-This repository reflects my learning and work on workflows for variant annotation, gene symbol standardization, and basic data curation in genomics, developed during my bioinformatics studies.
+This project filters a real small VCF subset (from chromosome 22, 1000 Genomes Project)  
+to remove low-quality variants (QUAL < 30).
 
-## Repository Structure
+## Dataset
+- 1000 Genomes Project chr22 region
+- Public domain data
 
-- `scripts/`: Python and Bash scripts for variant annotation and data cleanup  
-- `data/`: Example VCF files and gene lists for testing  
-- `notebooks/`: Jupyter notebooks demonstrating usage and workflows  
-- `docs/`: Standard Operating Procedures (SOPs) for curation  
-- `tests/`: Basic unit tests and validations
+## Structure
+- `scripts/` → Python filtering script
+- `data/` → Example VCF file
 
 ## How to Run
-
-You can run the scripts as follows:
 ```bash
-python scripts/variant_annotator.py data/sample.vcf > annotated.tsv
-python scripts/gene_mapper.py data/gene_list.txt > mapped_genes.tsv
-bash scripts/clean_vcf.sh data/sample.vcf > cleaned_sample.vcf
+python scripts/filter_vcf.py data/chr22_subset.vcf > data/chr22_filtered.vcf
+```
 
 ## Requirements
-- Python 3.8+
-- pandas
-- requests
-- Bash
+- Python 3.6+
+
+## Disclaimer
+This project uses public domain data (1000 Genomes Project).
